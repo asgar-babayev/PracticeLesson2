@@ -63,9 +63,7 @@ namespace AccountPractice2
                         {
                             foreach (var item in gr.GetAllStudents())
                             {
-                                Console.WriteLine($@"ID - {item.Id}
-Full Name - {item.Fullname}
-Point - {item.Point}");
+                                Console.WriteLine(item.Fullname);
                             }
                         }
                         catch (Exception ex)

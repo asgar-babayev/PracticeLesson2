@@ -10,7 +10,6 @@ namespace AccountPractice2.Models
         private int _studentLimit;
         private string _groupNo;
         private Student[] _students;
-        private Student[] _tempSt;
 
         public string GroupNo
         {
@@ -35,7 +34,7 @@ namespace AccountPractice2.Models
 
         private Group()
         {
-            _students = new Student[1];
+            _students = new Student[0];
         }
 
         public Group(string groupNo, int studentLimit) : this()
@@ -70,6 +69,8 @@ namespace AccountPractice2.Models
                             digit++;
                         }
                     }
+                    else return false;
+
                     if (upper == 2 && digit == 3) return true;
                 }
             }
@@ -80,10 +81,8 @@ namespace AccountPractice2.Models
         {
             if (_students.Length < StudentLimit)
             {
-                _tempSt = _students;
                 _students = new Student[_students.Length + 1];
-                _students = _tempSt;
-                _students[^1] = st;
+                _students[_students.Length - 1] = st;
             }
             else throw new ArgumentOutOfRangeException();
         }
