@@ -9,7 +9,8 @@ namespace AccountPractice2.Models
     {
         private int _studentLimit;
         private string _groupNo;
-        private Student[] _students = new Student[1];
+        private Student[] _students;
+        private Student[] _tempSt;
 
         public string GroupNo
         {
@@ -32,7 +33,12 @@ namespace AccountPractice2.Models
             }
         }
 
-        public Group(string groupNo, int studentLimit)
+        private Group()
+        {
+            _students = new Student[1];
+        }
+
+        public Group(string groupNo, int studentLimit) : this()
         {
             GroupNo = groupNo;
             StudentLimit = studentLimit;
@@ -47,7 +53,7 @@ namespace AccountPractice2.Models
 
         public static bool CheckGroupNo(string groupNo)
         {
-            if (groupNo.Length == 5 && !String.IsNullOrEmpty(groupNo) || !String.IsNullOrWhiteSpace(groupNo))
+            if (groupNo.Length == 5 && !String.IsNullOrEmpty(groupNo) && !String.IsNullOrWhiteSpace(groupNo))
             {
                 int upper = 0;
                 int digit = 0;
@@ -72,9 +78,11 @@ namespace AccountPractice2.Models
 
         public void AddStudent(Student st)
         {
-            if (_students.Length <= StudentLimit)
+            if (_students.Length < StudentLimit)
             {
-                Array.Resize(ref _students, _students.Length + 1);
+                _tempSt = _students;
+                _students = new Student[_students.Length + 1];
+                _students = _tempSt;
                 _students[^1] = st;
             }
             else throw new ArgumentOutOfRangeException();
@@ -100,6 +108,5 @@ namespace AccountPractice2.Models
         {
             return _students;
         }
-
     }
 }
