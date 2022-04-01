@@ -12,3 +12,31 @@ C:\Users\tu7609td3\source\repos\AccountPractice2\AccountPractice2\obj\Debug\netc
 C:\Users\tu7609td3\source\repos\AccountPractice2\AccountPractice2\obj\Debug\netcoreapp3.1\AccountPractice2.dll
 C:\Users\tu7609td3\source\repos\AccountPractice2\AccountPractice2\obj\Debug\netcoreapp3.1\AccountPractice2.pdb
 C:\Users\tu7609td3\source\repos\AccountPractice2\AccountPractice2\obj\Debug\netcoreapp3.1\AccountPractice2.genruntimeconfig.cache
+C:\Users\asger\Desktop\Tasks\PracticeLesson2\AccountPractice2\bin\Debug\netcoreapp3.1\AccountPractice2.exe
+C:\Users\asger\Desktop\Tasks\PracticeLesson2\AccountPractice2\bin\Debug\netcoreapp3.1\AccountPractice2.deps.json
+C:\Users\asger\Desktop\Tasks\PracticeLesson2\AccountPractice2\bin\Debug\netcoreapp3.1\AccountPractice2.runtimeconfig.json
+C:\Users\asger\Desktop\Tasks\PracticeLesson2\AccountPractice2\bin\Debug\netcoreapp3.1\AccountPractice2.runtimeconfig.dev.json
+C:\Users\asger\Desktop\Tasks\PracticeLesson2\AccountPractice2\bin\Debug\netcoreapp3.1\AccountPractice2.dll
+C:\Users\asger\Desktop\Tasks\PracticeLesson2\AccountPractice2\bin\Debug\netcoreapp3.1\AccountPractice2.pdb
+C:\Users\asger\Desktop\Tasks\PracticeLesson2\AccountPractice2\obj\Debug\netcoreapp3.1\AccountPractice2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\asger\Desktop\Tasks\PracticeLesson2\AccountPractice2\obj\Debug\netcoreapp3.1\AccountPractice2.AssemblyInfoInputs.cache
+C:\Users\asger\Desktop\Tasks\PracticeLesson2\AccountPractice2\obj\Debug\netcoreapp3.1\AccountPractice2.AssemblyInfo.cs
+C:\Users\asger\Desktop\Tasks\PracticeLesson2\AccountPractice2\obj\Debug\netcoreapp3.1\AccountPractice2.csproj.CoreCompileInputs.cache
+C:\Users\asger\Desktop\Tasks\PracticeLesson2\AccountPractice2\obj\Debug\netcoreapp3.1\AccountPractice2.dll
+C:\Users\asger\Desktop\Tasks\PracticeLesson2\AccountPractice2\obj\Debug\netcoreapp3.1\AccountPractice2.pdb
+C:\Users\asger\Desktop\Tasks\PracticeLesson2\AccountPractice2\obj\Debug\netcoreapp3.1\AccountPractice2.genruntimeconfig.cache
+C:\Users\asger\Desktop\Tasks\PracticeLesson2\AccountPractice2\obj\Debug\netcoreapp3.1\AccountPractice2.csproj.AssemblyReference.cache
+C:\Users\tu7609td3\Desktop\New folder\PracticeLesson2\AccountPractice2\bin\Debug\netcoreapp3.1\AccountPractice2.exe
+C:\Users\tu7609td3\Desktop\New folder\PracticeLesson2\AccountPractice2\bin\Debug\netcoreapp3.1\AccountPractice2.deps.json
+C:\Users\tu7609td3\Desktop\New folder\PracticeLesson2\AccountPractice2\bin\Debug\netcoreapp3.1\AccountPractice2.runtimeconfig.json
+C:\Users\tu7609td3\Desktop\New folder\PracticeLesson2\AccountPractice2\bin\Debug\netcoreapp3.1\AccountPractice2.runtimeconfig.dev.json
+C:\Users\tu7609td3\Desktop\New folder\PracticeLesson2\AccountPractice2\bin\Debug\netcoreapp3.1\AccountPractice2.dll
+C:\Users\tu7609td3\Desktop\New folder\PracticeLesson2\AccountPractice2\bin\Debug\netcoreapp3.1\AccountPractice2.pdb
+C:\Users\tu7609td3\Desktop\New folder\PracticeLesson2\AccountPractice2\obj\Debug\netcoreapp3.1\AccountPractice2.csproj.AssemblyReference.cache
+C:\Users\tu7609td3\Desktop\New folder\PracticeLesson2\AccountPractice2\obj\Debug\netcoreapp3.1\AccountPractice2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tu7609td3\Desktop\New folder\PracticeLesson2\AccountPractice2\obj\Debug\netcoreapp3.1\AccountPractice2.AssemblyInfoInputs.cache
+C:\Users\tu7609td3\Desktop\New folder\PracticeLesson2\AccountPractice2\obj\Debug\netcoreapp3.1\AccountPractice2.AssemblyInfo.cs
+C:\Users\tu7609td3\Desktop\New folder\PracticeLesson2\AccountPractice2\obj\Debug\netcoreapp3.1\AccountPractice2.csproj.CoreCompileInputs.cache
+C:\Users\tu7609td3\Desktop\New folder\PracticeLesson2\AccountPractice2\obj\Debug\netcoreapp3.1\AccountPractice2.dll
+C:\Users\tu7609td3\Desktop\New folder\PracticeLesson2\AccountPractice2\obj\Debug\netcoreapp3.1\AccountPractice2.pdb
+C:\Users\tu7609td3\Desktop\New folder\PracticeLesson2\AccountPractice2\obj\Debug\netcoreapp3.1\AccountPractice2.genruntimeconfig.cache

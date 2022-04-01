@@ -18,8 +18,9 @@ namespace AccountPractice2.Models
             get { return _fullname; }
             set
             {
-                if (!String.IsNullOrWhiteSpace(_fullname) && !String.IsNullOrEmpty(_fullname))
+                if (!String.IsNullOrWhiteSpace(value) || !String.IsNullOrEmpty(value))
                     _fullname = value;
+                else throw new WrongFullnameException("Ad daxil etmək məcburidir");
             }
         }
         public string Email
@@ -27,8 +28,9 @@ namespace AccountPractice2.Models
             get { return _email; }
             set
             {
-                if (!String.IsNullOrWhiteSpace(_email) && !String.IsNullOrEmpty(_email))
+                if (!String.IsNullOrWhiteSpace(value) || !String.IsNullOrEmpty(value))
                     _email = value;
+                else throw new WrongEmailException("Email daxil etmək məcburidir");
             }
         }
         public string Password
@@ -36,8 +38,12 @@ namespace AccountPractice2.Models
             get { return _password; }
             set
             {
-                if (PasswordChecker(value))
+                if (!String.IsNullOrEmpty(value) && !String.IsNullOrWhiteSpace(value) && value.Length >= 8)
                     _password = value;
+                else throw new WrongPasswordException(@"şifrədə minimum 8 character olmalıdır
+şifrədə ən az 1 böyük hərf olmalıdır
+şifrədə ən az 1 kiçik hərf olmalıdır
+şifrədə ən az 1 rəqəm olmalıdır");
             }
         }
 
@@ -52,20 +58,17 @@ namespace AccountPractice2.Models
             Id = _id;
         }
 
-        public User(string email, string password) : this()
+        public User(string fullname, string email, string password) : this()
         {
+            Fullname = fullname;
             Email = email;
             Password = password;
         }
 
-        public User(string fullname, string email, string password) : this(email, password)
-        {
-            Fullname = fullname;
-        }
 
         public static bool PasswordChecker(string password)
         {
-            if (!String.IsNullOrEmpty(password) && !String.IsNullOrWhiteSpace(password) && password.Length >= 8)
+            if (password.Length >= 8 && !String.IsNullOrEmpty(password) && !String.IsNullOrWhiteSpace(password))
             {
                 int upper = 0;
                 int lower = 0;
@@ -88,20 +91,22 @@ namespace AccountPractice2.Models
 
         public static bool FullnameChecker(string fullname)
         {
-            if (!String.IsNullOrWhiteSpace(fullname) && !String.IsNullOrEmpty(fullname))
+            if (!String.IsNullOrWhiteSpace(fullname) || !String.IsNullOrEmpty(fullname))
                 return true;
             throw new WrongFullnameException("Ad daxil etmək məcburidir");
         }
         public static bool EmailChecker(string email)
         {
-            if (!String.IsNullOrWhiteSpace(email) && !String.IsNullOrEmpty(email))
+            if (!String.IsNullOrWhiteSpace(email) || !String.IsNullOrEmpty(email))
                 return true;
             throw new WrongEmailException("Email daxil etmək məcburidir");
         }
 
         public void ShowInfo()
         {
-            Console.WriteLine($"Id - {Id} \nFullname - {Fullname} \nEmail - {Email}");
+            Console.WriteLine(@$"Id - {Id}
+Fullname - {Fullname} 
+Email - {Email}");
         }
 
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AccountPractice2.CustomExceptions;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,8 +8,19 @@ namespace AccountPractice2.Models
     public class Group
     {
         private int _studentLimit;
-        private Student[] _students;
-        public string GroupNo { get; set; }
+        private string _groupNo;
+        private Student[] _students = new Student[1];
+
+        public string GroupNo
+        {
+            get { return _groupNo; }
+            set
+            {
+                if (String.IsNullOrEmpty(value) || !String.IsNullOrWhiteSpace(value))
+                    _groupNo = value;
+                else throw new InvalidGroupNumberException("Qrup nömrəsi yanlışdır");
+            }
+        }
         public int StudentLimit
         {
             get { return _studentLimit; }
@@ -16,53 +28,70 @@ namespace AccountPractice2.Models
             {
                 if (value >= 5 || value <= 18)
                     _studentLimit = value;
+                else throw new StudentLimitException("Qrup 5 nəfərdən az 18 nəfərdən çox ola bilməz");
             }
         }
 
-        private Group()
-        {
-            _students = new Student[0];
-        }
-
-        public Group(string groupNo, int studentLimit) : this()
+        public Group(string groupNo, int studentLimit)
         {
             GroupNo = groupNo;
             StudentLimit = studentLimit;
         }
 
-        public bool CheckGroupNo(string groupNo)
+        public static bool CheckStudentLimit(int studentLimit)
         {
-            if (!String.IsNullOrEmpty(groupNo) && !String.IsNullOrWhiteSpace(groupNo) && groupNo.Length == 5)
+            if (studentLimit >= 5 && studentLimit <= 18)
+                return true;
+            throw new StudentLimitException("Qrup 5 nəfərdən az 18 nəfərdən çox ola bilməz");
+        }
+
+        public static bool CheckGroupNo(string groupNo)
+        {
+            if (groupNo.Length == 5 && !String.IsNullOrEmpty(groupNo) || !String.IsNullOrWhiteSpace(groupNo))
             {
                 int upper = 0;
                 int digit = 0;
-                foreach (var item in groupNo)
+                for (int i = 0; i < groupNo.Length; i++)
                 {
-                    if (char.IsUpper(item)) upper++;
-                    else if (char.IsDigit(item)) digit++;
-
+                    if (i < 2)
+                    {
+                        if (char.IsUpper(groupNo[i])) upper++;
+                    }
+                    else if (upper == 2 && i >= 2)
+                    {
+                        if (char.IsDigit(groupNo[i]))
+                        {
+                            digit++;
+                        }
+                    }
                     if (upper == 2 && digit == 3) return true;
                 }
             }
-            return false;
+            throw new InvalidGroupNumberException("Qrup nömrəsi yanlışdır");
         }
 
         public void AddStudent(Student st)
         {
-            Array.Resize(ref _students, _students.Length + 1);
-            _students[_students.Length - 1] = st;
+            if (_students.Length <= StudentLimit)
+            {
+                Array.Resize(ref _students, _students.Length + 1);
+                _students[^1] = st;
+            }
+            else throw new ArgumentOutOfRangeException();
         }
 
         public Student GetStudent(int? id)
         {
             if (id != null)
             {
-                for (int i = 0; i < _students.Length; i++)
+                foreach (Student item in _students)
                 {
-                    if (id == i)
-                        return _students[i];
+                    if (item.Id == id)
+                    {
+                        return item;
+                    }
+                    else throw new NotFoundException("Id tapılmadı");
                 }
-                throw new Exception();
             }
             throw new NullReferenceException();
         }
