@@ -40,6 +40,7 @@ namespace AccountPractice2
                         Group group = new Group(groupNo, studentLimit);
                         Console.WriteLine("Qrup yaradıldı");
                         Console.WriteLine("-------------------------------------------------------");
+                        choise = 0;
                         break;
                     default:
                         break;
@@ -47,6 +48,7 @@ namespace AccountPractice2
 
             } while (choise != 0);
 
+            Group gr = new Group(groupno, stLimit);
             do
             {
                 Console.WriteLine(@"0 - Quit
@@ -55,7 +57,6 @@ namespace AccountPractice2
 3 - Add student");
 
                 SetChoise(ref choise);
-                Group gr = new Group(groupno, stLimit);
                 switch (choise)
                 {
                     case 1:
@@ -85,11 +86,14 @@ namespace AccountPractice2
                     case 3:
                         SetStudentFullname(out string fullnameS);
                         SetStudentPoint(out double point);
-                        Student st = new Student(fullnameS, point);
                         try
                         {
                             if (groupno != "" && stLimit != 0)
+                            {
+                                Student st = new Student(fullnameS, point);
                                 gr.AddStudent(st);
+
+                            }
                             else throw new Exception("Qrup olmadan telebe elave ede bilmezsiniz");
                         }
                         catch (Exception ex)
